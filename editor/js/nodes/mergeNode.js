@@ -16,7 +16,7 @@ import { LGraphNode } from "litegraph.js";
  * Represents a merge node that combines multiple inputs into one output
  * @extends LGraphNode
  */
-export class VoicingMergeNode extends LGraphNode {
+export class BotMergeNode extends LGraphNode {
   /**
    * Creates a new merge node
    */

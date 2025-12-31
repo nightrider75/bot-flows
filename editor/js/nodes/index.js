@@ -6,27 +6,27 @@
 
 import { LiteGraph } from "litegraph.js";
 
-import { VoicingStartNode } from "./startNode.js";
-import { VoicingFlowNode } from "./flowNode.js";
-import { VoicingEndNode } from "./endNode.js";
-import { VoicingFunctionNode } from "./functionNode.js";
-import { VoicingMergeNode } from "./mergeNode.js";
+import { BotStartNode } from "./startNode.js";
+import { BotFlowNode } from "./flowNode.js";
+import { BotEndNode } from "./endNode.js";
+import { BotFunctionNode } from "./functionNode.js";
+import { BotMergeNode } from "./mergeNode.js";
 
 /**
  * Registers all node types with LiteGraph
  */
 export function registerNodes() {
-  LiteGraph.registerNodeType("nodes/Start", VoicingStartNode);
-  LiteGraph.registerNodeType("nodes/Flow", VoicingFlowNode);
-  LiteGraph.registerNodeType("nodes/End", VoicingEndNode);
-  LiteGraph.registerNodeType("nodes/Function", VoicingFunctionNode);
-  LiteGraph.registerNodeType("flow/Merge", VoicingMergeNode);
+  LiteGraph.registerNodeType("nodes/Start", BotStartNode);
+  LiteGraph.registerNodeType("nodes/Flow", BotFlowNode);
+  LiteGraph.registerNodeType("nodes/End", BotEndNode);
+  LiteGraph.registerNodeType("nodes/Function", BotFunctionNode);
+  LiteGraph.registerNodeType("flow/Merge", BotMergeNode);
 }
 
 export {
-  VoicingStartNode,
-  VoicingFlowNode,
-  VoicingEndNode,
-  VoicingFunctionNode,
-  VoicingMergeNode,
+  BotStartNode,
+  BotFlowNode,
+  BotEndNode,
+  BotFunctionNode,
+  BotMergeNode,
 };

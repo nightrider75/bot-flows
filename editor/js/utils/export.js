@@ -21,7 +21,7 @@ export function generateFlowConfig(graphInstance) {
 
   const nodes = graphInstance._nodes;
   let startNode = nodes.find(
-    (node) => node.constructor.name === "VoicingStartNode",
+    (node) => node.constructor.name === "BotStartNode",
   );
 
   if (!startNode) {
@@ -58,7 +58,7 @@ export function generateFlowConfig(graphInstance) {
         const targetNode = nodes.find((n) => n.id === link.target_id);
         if (!targetNode) return;
 
-        if (targetNode.constructor.name === "VoicingFunctionNode") {
+        if (targetNode.constructor.name === "BotFunctionNode") {
           // Create base function configuration
           const funcConfig = {
             type: "function",
@@ -80,7 +80,7 @@ export function generateFlowConfig(graphInstance) {
               if (!nextNode) continue;
 
               // If it connects to a merge node, follow through to final target
-              if (nextNode.constructor.name === "VoicingMergeNode") {
+              if (nextNode.constructor.name === "BotMergeNode") {
                 const mergeOutput = nextNode.outputs[0].links?.[0];
                 if (!mergeOutput) continue;
 
@@ -103,11 +103,11 @@ export function generateFlowConfig(graphInstance) {
           }
 
           functions.push(funcConfig);
-        } else if (targetNode.constructor.name === "VoicingMergeNode") {
+        } else if (targetNode.constructor.name === "BotMergeNode") {
           // Find all functions that connect to this merge node
           const connectedFunctions = nodes.filter(
             (n) =>
-              n.constructor.name === "VoicingFunctionNode" &&
+              n.constructor.name === "BotFunctionNode" &&
               n.outputs[0].links?.some((l) => {
                 const funcLink = graphInstance.links[l];
                 return funcLink && funcLink.target_id === targetNode.id;
@@ -153,8 +153,8 @@ export function generateFlowConfig(graphInstance) {
   // Process all nodes
   nodes.forEach((node) => {
     if (
-      node.constructor.name === "VoicingFunctionNode" ||
-      node.constructor.name === "VoicingMergeNode"
+      node.constructor.name === "BotFunctionNode" ||
+      node.constructor.name === "BotMergeNode"
     ) {
       return;
     }

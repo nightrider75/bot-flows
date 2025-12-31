@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to **Voicing Flows** will be documented in this file.
+All notable changes to **Bot Flows** will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -9,15 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add support for the new Voicing `LLMSwitcher`, which can be used as a drop-in
+- Add support for the new Bot Engine `LLMSwitcher`, which can be used as a drop-in
   replacement for `LLMService`s in scenarios where you want to switch LLMs at
   runtime.
 
   There are a couple of pre-requisites to using `LLMSwitcher`:
 
   - You must be using the new universal `LLMContext` and
-    `LLMContextAggregatorPair` (as of Voicing 0.0.82, supported only by
-    Voicing's OpenAI and Google LLM implementations, but with more on the way).
+    `LLMContextAggregatorPair` (as of Bot Engine 0.0.82, supported only by
+    Bot Engine's OpenAI and Google LLM implementations, but with more on the way).
   - You must be using "direct" functions or `FlowsFunctionSchema` functions (as
     opposed to provider-specific formats).
 
@@ -223,7 +223,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed an issue where if `run_in_parallel=False` was set for the LLM, the bot
   would trigger N completions for each sequential function call. Now, Flows
-  uses Voicing's internal function tracking to determine when there are more
+  uses Bot Engine's internal function tracking to determine when there are more
   edge functions to call.
 
 - Overhauled `pre_actions` and `post_actions` timing logic, making their timing
@@ -244,7 +244,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   the user to speak first.
 
 - Bumped the minimum required `bot-engine` version to 0.0.67 to align with AWS
-  Bedrock additions in Voicing. This also adds support for `FunctionCallParams`
+  Bedrock additions in Bot Engine. This also adds support for `FunctionCallParams`
   which were added in 0.0.66.
 
 - Updated to use `FunctionCallParams` as args for the function handler.
@@ -256,7 +256,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added AWS Bedrock examples for insurance and patient_intake.
 
 - Updated examples to `audio_in_enabled=True` and remove `vad_enabled` and
-  `vad_audio_passthrough` to align with the latest Voicing `TransportParams`.
+  `vad_audio_passthrough` to align with the latest Bot Engine `TransportParams`.
 
 ## [0.0.16] - 2025-03-26
 
@@ -292,13 +292,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   ```
 
 - Added support for `OpenAILLMService` subclasses in the adapter system. You
-  can now use any Voicing LLM service that inherits from `OpenAILLMService`
+  can now use any Bot Engine LLM service that inherits from `OpenAILLMService`
   such as `AzureLLMService`, `GrokLLMService`, `GroqLLMService`, and other
-  without requiring adapter updates. See the Voicing docs for
+  without requiring adapter updates. See the Bot Engine docs for
   [supported LLM services]().
 
 - Added a new `FlowsFunctionSchema` class, which allows you to specify function
-  calls using a standard schema. This is effectively a subclass of Voicing's
+  calls using a standard schema. This is effectively a subclass of Bot Engine's
   `FunctionSchema`.
 
 Example usage:
@@ -334,7 +334,7 @@ node_config = {
 
 ### Dependencies
 
-- Updated minimum Voicing version to 0.0.60 to use `FunctionSchema` and
+- Updated minimum Bot Engine version to 0.0.60 to use `FunctionSchema` and
   provider-specific adapters.
 
 ### Other
@@ -343,7 +343,7 @@ node_config = {
   `FlowsFunctionSchema`.
 
 - Updated examples to specify a `params` arg for `PipelineTask`, meeting the
-  Voicing requirement starting 0.0.58.
+  Bot Engine requirement starting 0.0.58.
 
 ## [0.0.15] - 2025-02-26
 
@@ -363,7 +363,7 @@ node_config = {
 
 - Temporarily reverted the deprecation of the `tts` parameter in
   `FlowManager.__init__()`. This feature will be deprecated in a future release
-  after the required Voicing changes are completed.
+  after the required Bot Engine changes are completed.
 
 ## [0.0.13] - 2025-02-06
 
@@ -505,7 +505,7 @@ def create_node() -> NodeConfig:
 - Breaking changes:
 
   - The FlowManager has a new required arg, `context_aggregator`.
-  - Voicing's minimum version has been updated to 0.0.53 in order to use the
+  - Bot Engine's minimum version has been updated to 0.0.53 in order to use the
     new `FunctionCallResultProperties` frame.
 
 - Updated all examples to align with the new changes.
@@ -648,7 +648,7 @@ def create_node() -> NodeConfig:
 ### Added
 
 - Added an `examples` directory which contains five different examples
-  showing how to build a conversation flow with Voicing Flows.
+  showing how to build a conversation flow with Bot Flows.
 
 - Added a new editor example called `patient_intake.json` which demonstrates
   a patient intake conversation flow.

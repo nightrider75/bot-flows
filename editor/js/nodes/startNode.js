@@ -4,13 +4,13 @@
  * SPDX-License-Identifier: BSD 2-Clause License
  */
 
-import { VoicingBaseNode } from "./baseNode.js";
+import { BotBaseNode } from "./baseNode.js";
 
 /**
  * Represents the starting node of a flow
- * @extends VoicingBaseNode
+ * @extends BotBaseNode
  */
-export class VoicingStartNode extends VoicingBaseNode {
+export class BotStartNode extends BotBaseNode {
   /**
    * Creates a new start node
    * @param {string} [title="Start"] - Optional custom title for the node

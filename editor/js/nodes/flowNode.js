@@ -4,13 +4,13 @@
  * SPDX-License-Identifier: BSD 2-Clause License
  */
 
-import { VoicingBaseNode } from "./baseNode.js";
+import { BotBaseNode } from "./baseNode.js";
 
 /**
  * Represents an intermediate flow node
- * @extends VoicingBaseNode
+ * @extends BotBaseNode
  */
-export class VoicingFlowNode extends VoicingBaseNode {
+export class BotFlowNode extends BotBaseNode {
   /**
    * Creates a new flow node
    */

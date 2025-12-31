@@ -5,11 +5,11 @@
  */
 
 import {
-  VoicingStartNode,
-  VoicingFlowNode,
-  VoicingEndNode,
-  VoicingFunctionNode,
-  VoicingMergeNode,
+  BotStartNode,
+  BotFlowNode,
+  BotEndNode,
+  BotFunctionNode,
+  BotMergeNode,
 } from "../nodes/index.js";
 import dagre from "dagre";
 
@@ -47,13 +47,13 @@ export function createFlowFromConfig(graph, flowConfig) {
 
     if (nodeId === flowConfig.initial_node) {
       // Create start node with the initial_node name
-      node = new VoicingStartNode();
+      node = new BotStartNode();
       node.title = nodeId;
     } else if (nodeId === "end") {
-      node = new VoicingEndNode();
+      node = new BotEndNode();
       node.title = nodeId;
     } else {
-      node = new VoicingFlowNode();
+      node = new BotFlowNode();
       node.title = nodeId;
     }
 
@@ -87,7 +87,7 @@ export function createFlowFromConfig(graph, flowConfig) {
   Object.entries(flowConfig.nodes).forEach(([sourceNodeId, nodeConfig]) => {
     if (nodeConfig.functions) {
       nodeConfig.functions.forEach((funcConfig) => {
-        const functionNode = new VoicingFunctionNode();
+        const functionNode = new BotFunctionNode();
         functionNode.properties.function = { ...funcConfig.function };
 
         graph.add(functionNode);
@@ -131,7 +131,7 @@ export function createFlowFromConfig(graph, flowConfig) {
   targetToFunctions.forEach((functions, targetName) => {
     if (functions.length > 1 && nodes[targetName]) {
       // Create merge node
-      const mergeNode = new VoicingMergeNode();
+      const mergeNode = new BotMergeNode();
       while (mergeNode.inputs.length < functions.length) {
         mergeNode.addInput(`In ${mergeNode.inputs.length + 1}`, "flow");
         mergeNode.size[1] += 20;

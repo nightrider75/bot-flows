@@ -33,9 +33,9 @@ import { formatActions } from "../utils/helpers.js";
  * Base class for all Voicing nodes
  * @extends LGraphNode
  */
-export class VoicingBaseNode extends LGraphNode {
+export class BotBaseNode extends LGraphNode {
   /**
-   * Creates a new VoicingBaseNode
+   * Creates a new BotBaseNode
    * @param {string} title - The display title of the node
    * @param {string} color - The color of the node
    * @param {string} [defaultContent='Enter message...'] - Default message content

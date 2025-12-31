@@ -33,7 +33,7 @@ class EditorState {
 
   /**
    * Updates the side panel with node data
-   * @param {VoicingBaseNode|null} node
+   * @param {BotBaseNode|null} node
    */
   updateSidePanel(node) {
     if (this.sidePanel) {

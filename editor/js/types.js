@@ -3,7 +3,7 @@
  */
 
 /**
- * @typedef {Object} VoicingBaseNode
+ * @typedef {Object} BotBaseNode
  */
 
 /**

@@ -37,7 +37,7 @@ import { editorState } from "../editor/editorState.js";
  * Represents a function node in the flow
  * @extends LGraphNode
  */
-export class VoicingFunctionNode extends LGraphNode {
+export class BotFunctionNode extends LGraphNode {
   /**
    * Creates a new function node
    */

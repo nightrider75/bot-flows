@@ -1,20 +1,20 @@
 <h1><div align="center">
- <img alt="voicing bot engine" width="500px" height="auto" src="
+ <img alt="bot engine" width="500px" height="auto" src="
 </div></h1>
 
 [![PyPI](https://img.shields.io/pypi/v/flows-test)](https://pypi.org/project/flows-test) [![Docs](https://img.shields.io/badge/Documentation-blue)]() [![Discord](https://img.shields.io/discord/1239284677165056021)](https://discord.ggbot-engine)
 
-Voicing Flows is an add-on framework for [Voicing]() that allows you to build structured conversations in your AI applications. It enables you to create both predefined conversation paths and dynamically generated flows while handling the complexities of state management and LLM interactions.
+Bot Flows is an add-on framework for [Bot Engine]() that allows you to build structured conversations in your AI applications. It enables you to create both predefined conversation paths and dynamically generated flows while handling the complexities of state management and LLM interactions.
 
 The framework consists of:
 
-- A Python module for building conversation flows with Voicing
+- A Python module for building conversation flows with Bot Engine
 - A [visual editor](#flows-test-Editor) for designing and exporting flow configurations
 
 ## Dependencies
 
 - Python 3.10 or higher
-- [Voicing]()
+- [Bot Engine]()
 
 ## Installation
 

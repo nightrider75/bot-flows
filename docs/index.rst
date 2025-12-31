@@ -1,9 +1,9 @@
-Voicing Flows API Reference
+Bot Flows API Reference
 ===========================
 
-Welcome to the Voicing Flows API reference documentation!
+Welcome to the Bot Flows API reference documentation!
 
-Voicing Flows is a conversation flow management add-on for Voicing AI applications,
+Bot Flows is a conversation flow management add-on for Bot AI applications,
 enabling sophisticated state-driven conversational experiences with conditional
 logic, flow transitions, and context management.
 

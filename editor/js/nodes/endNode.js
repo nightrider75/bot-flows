@@ -4,14 +4,14 @@
  * SPDX-License-Identifier: BSD 2-Clause License
  */
 
-import { VoicingBaseNode } from "./baseNode.js";
+import { BotBaseNode } from "./baseNode.js";
 import { LiteGraph } from "litegraph.js";
 
 /**
  * Represents the end node of a flow
- * @extends VoicingBaseNode
+ * @extends BotBaseNode
  */
-export class VoicingEndNode extends VoicingBaseNode {
+export class BotEndNode extends BotBaseNode {
   /**
    * Creates a new end node
    */

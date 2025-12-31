@@ -401,7 +401,7 @@ export class SidePanel {
 
   /**
    * Updates the side panel with node data
-   * @param {VoicingBaseNode|null} node
+   * @param {BotBaseNode|null} node
    */
   updatePanel(node) {
     if (this.hasUnsavedChanges()) {
@@ -441,7 +441,7 @@ export class SidePanel {
     this.elements.title.textContent = `Edit ${node.title}`;
 
     // Handle different node types
-    if (node.constructor.name === "VoicingFunctionNode") {
+    if (node.constructor.name === "BotFunctionNode") {
       this.elements.messageEditor.style.display = "none";
       this.elements.functionEditor.style.display = "block";
 
@@ -458,7 +458,7 @@ export class SidePanel {
       const roleMessagesContainer = document.getElementById(
         "role-messages-container",
       );
-      if (node.constructor.name === "VoicingStartNode") {
+      if (node.constructor.name === "BotStartNode") {
         roleMessagesContainer.style.display = "block";
         this.editors.roleMessages.setValue(node.properties.role_messages || []);
       } else {
