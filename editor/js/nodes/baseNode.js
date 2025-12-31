@@ -30,7 +30,7 @@ import { formatActions } from "../utils/helpers.js";
  */
 
 /**
- * Base class for all Voicing nodes
+ * Base class for all flow nodes
  * @extends LGraphNode
  */
 export class BotBaseNode extends LGraphNode {
